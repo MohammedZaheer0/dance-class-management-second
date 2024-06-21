@@ -1,33 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '~@syncfusion/ej2-base/styles/material.css';
+@import '~@syncfusion/ej2-base/styles/material.css';
+@import '~@syncfusion/ej2-buttons/styles/material.css';
+@import '~@syncfusion/ej2-calendars/styles/material.css';
+@import '~@syncfusion/ej2-dropdowns/styles/material.css';
+@import '~@syncfusion/ej2-inputs/styles/material.css';
+@import '~@syncfusion/ej2-navigations/styles/material.css';
+@import '~@syncfusion/ej2-popups/styles/material.css';
+@import '~@syncfusion/ej2-splitbuttons/styles/material.css';
+@import '~@syncfusion/ej2-lists/styles/material.css';
+@import '~@syncfusion/ej2-schedule/styles/material.css';
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+
+/* All */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Active */
+.active{
+    color: #CE00FF;
+    background: #FEF7FF;
+}  
+/* Table */
+  th, td {
+    text-align: left;
+    padding: 8px;
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.marginbottom{
+    margin-bottom: 20px !important;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Input */
+#searchplaceholder::placeholder{
+    color: #A686AD;
 }

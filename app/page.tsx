@@ -1,113 +1,126 @@
-import Image from "next/image";
+'use clients';
+import React from 'react';
+import Image from 'next/image';
 
-export default function Home() {
+const Home = () => {
+    // DanceNames Array
+  const Dances = ['Hip-Hop','Contemporary','Bharatanatyam','Ballet','Lorem','Epsum','Dolor','Lorem'];
+
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>   
+       <div className='py-4 sm:px-5 px-3 sm:text-2xl font-semibold flex-1 h-screen max-w-[100%]'>
+       {/* DashBoard Overview Header */}
+            <h1 className='shadow py-3 pl-5 lg:rounded-full rounded text-[18px] sm:text-2xl'>Dashboard Overview</h1> 
+            <div className='grid lg:grid-cols-2 grid-cols-1 my-7 gap-4'>
+                
+                {/* Class Today Div */}
+                <div className='shadow-lg rounded sm:pb-3 pb-5'>
+                    <h1 className='sm:pl-7 pl-5 py-5 '>Classes Today</h1>
+                    <div>
+
+                        <div className='sm:max-w-[90%] mx-auto my-4 flex justify-between px-5 rounded shadow py-2 items-center bg-[#FEF7FF]'>
+                            <div>
+                                <h2>Contemporary</h2>
+                                <h3 className='sm:text-[15px] text-[13px] text-[#A686AD] sm:my-0 my-2'>21 Students</h3>
+                            </div>
+                            <p className='sm:text-[15px] text-[13px] text-[#A686AD] ml-5'>10 AM - 11.30 AM</p>
+                        </div>
+
+                        <div className='sm:max-w-[90%] mx-auto my-4 flex justify-between px-5 rounded shadow py-2 items-center bg-[#FEF7FF]'>
+                            <div>
+                                <h2 className=''>Ballet</h2>
+                                <h3 className='sm:text-[15px] text-[13px] text-[#A686AD] sm:my-0 my-2'>12 Students</h3>
+                            </div>
+                            <p className='sm:text-[15px] text-[13px] text-[#A686AD]'>3 PM - 4.30 PM</p>
+                        </div>
+
+
+                        <div className='sm:max-w-[90%] mx-auto my-4 flex justify-between px-5 rounded shadow py-2 items-center bg-[#FEF7FF]'>
+                            <div>
+                                <h2>Hip-Hop</h2>
+                                <h3 className='sm:text-[15px] text-[13px] text-[#A686AD] sm:my-0 my-2'>37 Students</h3>
+                            </div>
+                            <p className='sm:text-[15px] text-[13px] text-[#A686AD]'>6.30 PM - 7.30 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                {/* Student Status Div */}
+                <div className='shadow-lg rounded'>
+                    <h1 className='pl-7 py-5'>Student Status</h1>
+                <div className='sm:max-w-[90%] max-w-[80%] mx-auto mb-5 relative' style={{ aspectRatio: '16/9', position: 'relative' }}>
+                    <Image src="/graph.png"
+                    fill
+                    sizes='(max-width: 1500px) 90%, 80%'
+                    style={{ objectFit: 'contain' }}
+                    priority
+                    alt='image'
+                />
+                </div>
+                </div>
+
+            </div>
+
+
+
+            <div className='max-w-[100%] mx-auto grid sm:grid-cols-2 lg:grid-cols-3  grid-cols-1 justify-between gap-7'>
+
+            {/* Revenue Div     */}
+            <div className='shadow-lg px-5 mb-5'>
+                <h2 className='text-xl pt-4'>Revenue</h2>
+
+                <div className='py-5'>
+                <h1 className='sm:text-4xl text-3xl'> <i className="fa-solid fa-indian-rupee-sign"></i> 10,500</h1>
+                <p className='sm:text-[15px] text-[13px] text-[#A686AD]'>This months revenue so far</p>
+                </div>
+
+                <div className='pb-5'>
+                    <h1 className='sm:text-4xl text-3xl'><i className="fa-solid fa-indian-rupee-sign"></i> 75,000</h1>
+                    <p className='sm:text-[15px] text-[13px] text-[#A686AD]'>Previous month</p>
+                </div>
+
+                <div className='flex mb-2 mt-3 '>
+                    <div className='mr-[0%] bg-[#FEF7FF] rounded px-5 py-3'>
+                        <h1 className='sm:text-5xl text-3xl'>35</h1>
+                        <p className='sm:text-[15px] text-[13px] text-[#A686AD]'>Student</p>
+                        <p className='sm:text-[15px] text-[13px] text-[#04BC00]'>Have Paid</p>
+                    </div>
+                    <div className='bg-[#FEF7FF] px-5 py-3 rounded'>
+                        <h1 className='sm:text-5xl text-3xl'>108</h1>
+                        <p className='sm:text-[15px] text-[13px] text-[#A686AD]'>Students <br /> Yet to Pay</p>
+                    </div>
+                </div>
+                
+            </div>
+
+
+            {/* Top Dance Div                 */}
+            <div className='shadow-lg px-5 mb-5'>
+                <h3 className='text-xl pt-4'>Top Dance forms</h3>
+                <div className='px-5'>
+                <ol style={{listStyleType:'decimal'}}>
+                    {Dances.map((item, index) => (
+                        <li key={index} typeof='number' className='sm:text-xl text-1xl  sm:my-3 my-4 text-[#A686AD]'>{item}</li>
+                    ))}
+                </ol>
+                </div>
+            </div>
+
+
+            {/* Classes Hours Div */}
+            <div className='shadow-lg px-5 h-fit pb-5 mb-5'>
+                <h2 className='text-xl pt-4'>Class Hours</h2>
+                <p className='my-3 text-[#A686AD] sm:text-xl text-[12px]'><span className='sm:text-5xl text-3xl text-black'>31</span>hr <span className='text-black sm:text-5xl text-3xl ml-5'> 45</span>min</p>
+                <p className='sm:text-[15px] text-[13px] text-[#A686AD]'>Of dance classes taken <br /> this month so far</p>
+            </div>
+
+            </div>
+
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+    </div>
+  )
 }
+
+export default Home
